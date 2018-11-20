@@ -6,10 +6,10 @@
 The University has some Arduino UNO´s
 
 ###Team
-Maximilian Bachmann
-Marvin Eisenmann
-Florian Vetter
-(Felix Bandle)
+* Maximilian Bachmann (@maxbachmann)
+* Marvin Eisenmann (@ )
+* Florian Vetter (@floydsteam)
+* (Felix Bandle (@felixban) )
 
 ###Time
 The Project has to be finished until:
