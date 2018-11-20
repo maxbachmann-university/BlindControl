@@ -6,9 +6,10 @@
 The University has some Arduino UNO´s
 
 ###Team
-Marvin Eisenmann
-Florian 
-Maximilian Bachmann
+* Maximilian Bachmann (@maxbachmann)
+* Marvin Eisenmann (@ )
+* Florian Vetter (@floydsteam)
+* (Felix Bandle (@felixban) )
 
 ###Time
 The Project has to be finished until:
@@ -20,7 +21,7 @@ Die Jalousiesteuerung soll eine Ansteuerung der Jalousien sowohl ein vollständi
 
 Es sollen verschiedene Möglichkeiten zur Ansteuerung implementiert werden. Konkret sind das für den Prototyp:
 1) automatische Ansteuerung auf Basis von Sensorwerten. Für den Prototyp sollen ein Helligkeitssensor, sowie ein Windsensor eingebunden werden.
-2) manuelle Ansteuerung basierend auf einer bestehenden Smarthome Plattform um die Steuerung komfortabel für alle SMart Home Geräte über eine Plattform zu ermöglichen
+2) manuelle Ansteuerung basierend auf einer bestehenden Smarthome Plattform um die Steuerung komfortabel für alle Smart Home Geräte über eine Plattform zu ermöglichen
 3) sprachbasierte Ansteuerung basierend auf dem offline Sprachassistenten Snips
 
 Für den Prototyp soll die Gerätezahl möglichst gering gehalten werden, es sollen jedoch alle Funktionen ersichtlich sein.
