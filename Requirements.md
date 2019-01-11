@@ -29,4 +29,12 @@ Da im Rahmen des Projekts keine elektrische Jalousie zur Verfügung steht genüg
 Die Sensoren können für den Prototyp alle in einem Sensorgerät implementiert werden und müssen nicht getrennt aufgebaut werden. Anforderungen an die Sensorgeräte sind ein sehr niedriger Stromverbrauch, da die Geräte nur schlecht an eine Stromquelle angeschlossen werden können. Mindestbetriebszeit soll hierbei ein Jahr darstellen. Wie bei der Jalousiesteuerung soll die Implementierung eine problemlose Anbindung anderer Sensoren ermöglichen.
 
 
+
+Requirements nach Standard:
+
+Kategorie: F = Funktional, I = Interface, Q = Quality
+VM: S(imiliaris), I(nspection), R(eview), M(easurement), A(nalysis), T(est)
+
+| ID | Text        | Kat. | VM |
+|----|-------------|------|----|
  
