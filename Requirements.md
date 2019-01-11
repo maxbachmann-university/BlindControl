@@ -37,4 +37,11 @@ VM: S(imiliaris), I(nspection), R(eview), M(easurement), A(nalysis), T(est)
 
 | ID | Text        | Kat. | VM |
 |----|-------------|------|----|
+|1|Das System Jalosieansteuerung soll eine Jalosie (vereinfachte Darstellung durch Relais) vollständig öffnen und schließen können.|F|??|
+|2|Das System Jalosieansteuerung soll eine Jalosie (vereinfachte Darstellung durch Relais) auf Zustände zwischen ganz offen oder geschlossen einstellen können.|F|??|
+|3|Das Untersystem Sensoreinheit soll Umweltgegebenheiten zuverlässig messen können.|F|??|
+|4|Das Untersystem Sensoreinheit soll gemessene Sensordaten an das Sytem Jalosieansteuerung übermitteln können.|I|??|
+|5|Das System Jalosieansteuerung soll Sensordaten des Untersystem Sensoreinheit empfangen können|I|??|
+|6|Das System Jalosieansteuerung soll eigenständige Entscheidungen zum Zustand mittels der Sensordaten treffen|F|??|
+|7|Das System Jalosieansteuerung soll mittels einer einer entsprechenden Smart Home Plattform gesteuert werden können|I|??|
  
