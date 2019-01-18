@@ -12,7 +12,7 @@ The University has some Arduino UNO´s
 * (Felix Bandle (@felixban) )
 
 ###Time
-The Project has to be finished until:
+The Project has to be finished until: 8.3.18
 
 
 ##Project Requirements
@@ -37,11 +37,12 @@ VM: S(imiliaris), I(nspection), R(eview), M(easurement), A(nalysis), T(est)
 
 | ID | Text        | Kat. | VM |
 |----|-------------|------|----|
-|1|Das System Jalosieansteuerung soll eine Jalosie (vereinfachte Darstellung durch Relais) vollständig öffnen und schließen können.|F|??|
-|2|Das System Jalosieansteuerung soll eine Jalosie (vereinfachte Darstellung durch Relais) auf Zustände zwischen ganz offen oder geschlossen einstellen können.|F|??|
-|3|Das Untersystem Sensoreinheit soll Umweltgegebenheiten zuverlässig messen können.|F|??|
-|4|Das Untersystem Sensoreinheit soll gemessene Sensordaten an das Sytem Jalosieansteuerung übermitteln können.|I|??|
-|5|Das System Jalosieansteuerung soll Sensordaten des Untersystem Sensoreinheit empfangen können|I|??|
-|6|Das System Jalosieansteuerung soll eigenständige Entscheidungen zum Zustand mittels der Sensordaten treffen|F|??|
-|7|Das System Jalosieansteuerung soll mittels einer einer entsprechenden Smart Home Plattform gesteuert werden können|I|??|
- 
+|1|Das System soll eine Jalousie vollständig öffnen und schließen können.|F|??|
+|2|Das System soll eine Jalousie auf Zustände zwischen ganz offen oder geschlossen einstellen können.|F|??|
+|3|Das System soll die Helligkeit messen können.|F|??|
+|!|Das System soll die Windstärke messen können.|F|??|
+|4|Das System soll mittels MQTT kommunizieren können.|I|??|
+|6|Das System soll entsprechend der Sensordaten vordefinierte Zustände einnehmen.|F|??|
+|!|Das System soll folgende Zustände kennen: 
+|7|Das System soll kompatibel zu Home Assistant sein.|I|??|
+
