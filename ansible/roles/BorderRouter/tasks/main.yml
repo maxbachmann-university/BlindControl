@@ -1,0 +1,134 @@
+- name: install required packages
+  become: yes
+  apt:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+    - git
+    - hostapd
+    - dnsmasq
+    - tayga
+
+- name: Clone the OTBR repository
+  git:
+    repo: https://github.com/openthread/borderrouter
+    dest: /openthread/borderrouter
+
+- name: Install dependencies
+  command: sudo ./openthread/borderrouter/script/bootstrap
+
+- name: Compile and install OTBR and wpantund
+  command: sudo ./openthread/borderrouter/script/setup NETWORK_MANAGER=0
+
+- name: update dhcpcd.conf
+  become: yes
+  lineinfile:
+    path: /etc/dhcpcd.conf
+    marker: "<!-- {mark} ANSIBLE MANAGED LINE -->"
+    line: 'denyinterfaces wlan0'
+
+- name: configure static ipv4
+  become: yes
+  blockinfile:
+    path: /etc/network/interfaces.d/wlan0
+    marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+    block: /templates/interfaces.d/wlan0.j2
+
+- name: create hostapd configuration
+  become: yes
+  template:
+    src: /templates/hostapd.conf.j2
+    dest: /etc/hostapd/hostapd.conf
+
+- name: Set this new configuration file as the default daemon
+  become: yes
+  lineinfile:
+    path: /etc/default/hostapd
+    marker: "<!-- {mark} ANSIBLE MANAGED LINE -->"
+    line: 'DAEMON_CONF="/etc/hostapd/hostapd.conf"'
+
+- name: Create a service configuration file for hostapd
+  become: yes
+  copy:
+    src: /files/hostapd.service
+    dest: /etc/systemd/system/hostapd.service
+
+- name: edit /etc/rc.local
+  become: yes
+  lineinfile:
+    path: /etc/rc.local
+    line: 'sudo service hostapd start'
+    insertbefore: 'exit 0'
+
+- name: install unbound
+  import_tasks: unbound.yml
+
+- name: Add configuration parameters to dnsmasq.conf
+  become: yes
+  blockinfile:
+    path: /etc/dnsmasq.conf
+    marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+    block: /templates/dnsmasq.conf.j2
+
+- name: start bind9 after dnsmasq
+  become: yes
+  lineinfile:
+    path: /lib/systemd/system/bind9.service
+    marker: "<!-- {mark} ANSIBLE MANAGED LINE -->"
+    line: '"After=network.target dnsmasq.service"'
+    state: present
+    regexp: '^(.*)"option domain-name-servers(.*)$'
+
+- name: create hostapd configuration
+  become: yes
+  template:
+    src: /templates/tayga.conf.j2
+    dest: /etc/tayga.conf
+
+- name: create hostapd configuration
+  become: yes
+  lineinfile:
+    path: /etc/default/tayga
+    marker: "<!-- {mark} ANSIBLE MANAGED LINE -->"
+    line: 'RUN="yes"'
+    state: present
+    regexp: '^(.*)RUN=(.*)$'
+
+- name: Enable IPv4
+  command: sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
+
+- name: Enable IPv6
+  command: sudo sh -c "echo 1 > /proc/sys/net/ipv6/conf/all/forwarding"
+
+- name: ensure IPv4 forwarding remains enabled after reboot
+  become: yes
+  lineinfile:
+    path: /etc/sysctl.conf
+    marker: "<!-- {mark} ANSIBLE MANAGED LINE -->"
+    line: 'net.ipv4.ip_forward=1'
+    state: present
+    regexp: '^(.*)#net.ipv4.ip_forward=(.*)$'
+
+- name: Enable NAT 44
+  command: sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+- name: Filter between eth0 and wlan0
+  command: sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+- name: Filter between wlan0 and eth0
+  command: sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
+
+- name: save iptable rules
+  command: sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"
+
+- name: edit /etc/rc.local
+  become: yes
+  lineinfile:
+    path: /etc/rc.local
+    line: 'iptables-restore < /etc/iptables.ipv4.nat'
+    insertbefore: 'exit 0'
+
+
+
+

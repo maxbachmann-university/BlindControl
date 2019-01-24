@@ -1,0 +1,39 @@
+- name: Install unbound
+  apt:
+    name: unbound
+    state: present
+
+- name: Ensures /var/lib/unbound dir exists
+  become: True
+  file: 
+    path=/var/lib/unbound
+    state=directory
+
+- name: download root hints
+  get_url: 
+    url=https://www.internic.net/domain/named.cache
+    dest=/var/lib/unbound/root.hints
+
+- name: add cronjob to update root hints
+  become: yes
+  copy:
+    src: files/root_hints
+    dest: "/etc/cron.weekly"
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Create unbound config
+  become: True
+  template:
+    src="unbound_config.j2"
+    dest="/etc/unbound/unbound.conf"
+    owner=root
+    group=root
+    mode=0644
+
+- name: Start unbound service
+  become: true
+  service:
+    name: unbound
+    state: started

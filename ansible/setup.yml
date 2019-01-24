@@ -1,0 +1,10 @@
+---
+
+- name: Install useful packages
+  hosts: thinkpad
+  tags: 
+  - setup
+  roles:
+    - border_router_packages
+
+
