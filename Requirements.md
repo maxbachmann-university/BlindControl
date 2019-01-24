@@ -12,7 +12,7 @@ The University has some Arduino UNO´s
 * (Felix Bandle (@felixban) )
 
 ###Time
-The Project has to be finished until:
+The Project has to be finished until: 8.3.18
 
 
 ##Project Requirements
@@ -29,4 +29,20 @@ Da im Rahmen des Projekts keine elektrische Jalousie zur Verfügung steht genüg
 Die Sensoren können für den Prototyp alle in einem Sensorgerät implementiert werden und müssen nicht getrennt aufgebaut werden. Anforderungen an die Sensorgeräte sind ein sehr niedriger Stromverbrauch, da die Geräte nur schlecht an eine Stromquelle angeschlossen werden können. Mindestbetriebszeit soll hierbei ein Jahr darstellen. Wie bei der Jalousiesteuerung soll die Implementierung eine problemlose Anbindung anderer Sensoren ermöglichen.
 
 
- 
+
+Requirements nach Standard:
+
+Kategorie: F = Funktional, I = Interface, Q = Quality
+Verifikationsmethode: S(imiliaris), I(nspection), R(eview), M(easurement), A(nalysis), T(est)
+
+|ID|Text        |Kat.|VM|
+|--|-------------------------------------------------------------------------------------------------|----|--|
+|1|Das System soll eine Jalousie vollständig öffnen und schließen können.|F|??|
+|2|Das System soll eine Jalousie auf Zustände zwischen ganz offen oder geschlossen einstellen können.|F|??|
+|3|Das System soll die Helligkeit messen können.|F|??|
+|4|Das System soll die Windstärke messen können.|F|??|
+|5|Das System soll mittels MQTT(Message Queuing Telemetry Transport) kommunizieren können.|I|??|
+|6|Das System soll entsprechend der Sensordaten vordefinierte Zustände einnehmen.|F|??|
+|7|Das System soll folgende Zustände kennen: Windig, Dunkel, Normal, Hell|F||??|
+|8|Das System soll kompatibel zu Home Assistant sein.|I|??|
+
