@@ -35,8 +35,8 @@ Requirements nach Standard:
 Kategorie: F = Funktional, I = Interface, Q = Quality
 Verifikationsmethode: S(imiliaris), I(nspection), R(eview), M(easurement), A(nalysis), T(est)
 
-| ID | Text        | Kat. | VM |
-|----|-------------|------|----|
+|ID|Text        |Kat.|VM|
+|--|-------------------------------------------------------------------------------------------------|----|--|
 |1|Das System soll eine Jalousie vollständig öffnen und schließen können.|F|??|
 |2|Das System soll eine Jalousie auf Zustände zwischen ganz offen oder geschlossen einstellen können.|F|??|
 |3|Das System soll die Helligkeit messen können.|F|??|
