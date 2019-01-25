@@ -18,12 +18,12 @@ The Project has to be finished until: 8.3.18
 
 Requirements nach Standard:
 
-Kategorie: F = Funktional, I = Interface, Q = Quality</br>
+Kategorie: F = Funktional, IF = Interface, Q = Quality</br>
 Verifikationsmethode: S(imiliaris), I(nspection), R(eview), M(easurement), A(nalysis), T(est)
 
 |ID|Text        |Kat.|VM|
 |--|-------------------------------------------------------------------------------------------------|----|--|
-|1|Das System soll modular in einen Regler, ein Sensormodul und eine Aktorsteuerung aufgeteilt sein|IF|T|
+|1|Das System soll modular in einen Regler, ein Sensormodul und eine Aktorsteuerung aufgeteilt sein|F|T|
 |2|Das System soll die Position einer Jalousie zwischen 0% und 100% einstellen können|F|T|
 |3|Der Sollwert für die Jalousieposition soll mit Home Assistant (Smarthome Plattform) manuell einstellbar sein|IF|T|
 |4|Der Sollwert für die Jalousieposition soll eine Schnittstelle zur manuellen Einstellung der Jalousieposition bieten sein|IF|T|
