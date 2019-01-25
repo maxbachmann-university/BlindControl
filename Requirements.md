@@ -18,7 +18,7 @@ The Project has to be finished until: 8.3.18
 
 Requirements nach Standard:
 
-Kategorie: F = Funktional, I = Interface, Q = Quality
+Kategorie: F = Funktional, I = Interface, Q = Quality</br>
 Verifikationsmethode: S(imiliaris), I(nspection), R(eview), M(easurement), A(nalysis), T(est)
 
 |ID|Text        |Kat.|VM|
