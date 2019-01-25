@@ -39,10 +39,10 @@ Verifikationsmethode: S(imiliaris), I(nspection), R(eview), M(easurement), A(nal
 |--|-------------------------------------------------------------------------------------------------|----|--|
 |1|Das System soll eine Jalousie vollständig öffnen und schließen können.|F|??|
 |2|Das System soll eine Jalousie auf Zustände zwischen ganz offen oder geschlossen einstellen können.|F|??|
-|3|Das System soll die Helligkeit messen können.|F|??|
-|4|Das System soll die Windstärke messen können.|F|??|
+|3|Das System soll die Helligkeit messen können.|I|??|
+|4|Das System soll die Windstärke messen können.|I|??|
 |5|Das System soll mittels MQTT(Message Queuing Telemetry Transport) kommunizieren können.|I|??|
 |6|Das System soll entsprechend der Sensordaten vordefinierte Zustände einnehmen.|F|??|
-|7|Das System soll folgende Zustände kennen: Windig, Dunkel, Normal, Hell|F||??|
+|7|Das System soll folgende Zustände kennen: Windig, Dunkel, Normal, Hell.|F||??|
 |8|Das System soll kompatibel zu Home Assistant sein.|I|??|
 
