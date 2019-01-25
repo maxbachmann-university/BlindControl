@@ -37,7 +37,7 @@ Verifikationsmethode: S(imiliaris), I(nspection), R(eview), M(easurement), A(nal
 |12|Das Sensormodul soll netzunabhängig betrieben werden.|F|I|
 |13|Die Batterie des Sensormoduls soll mindestens 1 Jahr überdauern|F|T|
 |14|Die Batterie des Sensormoduls soll austauschbar sein|F|I|
-|15|Das System soll 1 mal pro Sekunde aktualisiert werden|F||T  |
+|15|Das System soll 1 mal pro Sekunde aktualisiert werden|F|T|
 |16|Das System (bis auf das Sensormodul) soll über eine externe Spannungsversorgung betrieben werden|F|T|
 |17|Die aktuellen Sensorwerte sollen vom Sensormodul gemessen werden|IF|T|
 
