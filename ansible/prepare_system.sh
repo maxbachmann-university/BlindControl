@@ -1,47 +1,47 @@
 #!/bin/bash
 #
-# Prepare system for nextcloud
+# Prepare system for BlindControl
 #
 prepare_ubuntu() {
         $SUDO apt install software-properties-common -y
         $SUDO apt-add-repository ppa:ansible/ansible -y
         $SUDO apt update -y
-        $SUDO apt install ansible python-mysqldb python-netaddr mc vim git facter -y
+        $SUDO apt install ansible vim git -y
         echo
-        echo "Ubuntu Sytem ready for nextcloud."
+        echo "Ubuntu Sytem ready for BlindControl."
         echo
 }
 
 prepare_debian() {
-        $SUDO apt install dirmngr mc vim git facter -y
+        $SUDO apt install dirmngr vim git -y
         $SUDO apt update -y
-        $SUDO apt install python-mysqldb python-pip python3-pip facter -y
+        $SUDO apt install python-pip python3-pip facter -y
         $SUDO pip install pip -U
         $SUDO pip install setuptools -U
         $SUDO pip install ansible -U
         echo
-        echo "Debian Sytem ready for nextcloud."
+        echo "Debian Sytem ready for BlindControl."
         echo
 }
 
 prepare_raspbian() {
-        $SUDO apt install dirmngr mc vim git libffi-dev facter -y
+        $SUDO apt install dirmngr vim git libffi-dev -y
         $SUDO apt dist-upgrade -y
-        $SUDO apt install python-mysqldb python-pip python3-pip facter -y
+        $SUDO apt install python-pip python3-pip facter -y
         $SUDO pip install pip -U
         $SUDO pip install setuptools -U
         $SUDO pip install ansible -U
         echo
-        echo "Rasbpian System ready for nextcloud."
+        echo "Rasbpian System ready for BlindControl."
         echo
 }
 
 prepare_centos() {
         $SUDO yum install epel-release -y
-        $SUDO yum install ansible git vim mc python-mysqldb python-netaddr facter -y
+        $SUDO yum install ansible git vim -y
         $SUDO yum update -y
         echo
-        echo "CentOS Sytem ready for nextcloud."
+        echo "CentOS Sytem ready for BlindControl."
         echo
 }
 
