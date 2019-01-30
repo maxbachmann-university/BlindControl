@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Prepare system for nextcloud
+# Prepare system for BlindControl
 #
 prepare_ubuntu() {
         $SUDO apt install software-properties-common -y
@@ -8,7 +8,7 @@ prepare_ubuntu() {
         $SUDO apt update -y
         $SUDO apt install ansible python-mysqldb python-netaddr mc vim git facter -y
         echo
-        echo "Ubuntu Sytem ready for nextcloud."
+        echo "Ubuntu Sytem ready for BlindControl."
         echo
 }
 
@@ -20,7 +20,7 @@ prepare_debian() {
         $SUDO pip install setuptools -U
         $SUDO pip install ansible -U
         echo
-        echo "Debian Sytem ready for nextcloud."
+        echo "Debian Sytem ready for BlindControl."
         echo
 }
 
@@ -32,7 +32,7 @@ prepare_raspbian() {
         $SUDO pip install setuptools -U
         $SUDO pip install ansible -U
         echo
-        echo "Rasbpian System ready for nextcloud."
+        echo "Rasbpian System ready for BlindControl."
         echo
 }
 
@@ -41,7 +41,7 @@ prepare_centos() {
         $SUDO yum install ansible git vim mc python-mysqldb python-netaddr facter -y
         $SUDO yum update -y
         echo
-        echo "CentOS Sytem ready for nextcloud."
+        echo "CentOS Sytem ready for BlindControl."
         echo
 }
 
