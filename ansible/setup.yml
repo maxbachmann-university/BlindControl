@@ -1,10 +1,11 @@
 ---
 
-- name: Install useful packages
-  hosts: thinkpad
+- name: Setup Raspberry Pi for BlindControl
+  hosts: BorderRouter
   tags: 
   - setup
   roles:
-    - border_router_packages
+    - BorderRouter
+    - AccessPoint
 
 
