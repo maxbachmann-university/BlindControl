@@ -45,6 +45,14 @@ prepare_centos() {
         echo
 }
 
+prepare_fedora() {
+        $SUDO dnf install ansible git vim -y
+        $SUDO dnf update -y
+        echo
+        echo "Fedora Sytem ready for BlindControl."
+        echo
+}
+
 usage() {
         echo
         echo "Linux distribution not detected."
@@ -70,6 +78,9 @@ fi
 case $ID in
         'ubuntu')
                 prepare_ubuntu
+        ;;
+        'fedora')
+                prepare_fedora
         ;;
         'debian')
                 prepare_debian
