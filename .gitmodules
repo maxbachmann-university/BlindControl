@@ -1,3 +1,0 @@
-[submodule "nrf52840-breakoutboard"]
-	path = nrf52840-breakoutboard
-	url = https://github.com/maxbachmann/nrf52840-breakoutboard.git
