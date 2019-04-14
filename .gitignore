@@ -30,3 +30,15 @@
 *.exe
 *.out
 *.app
+
+# Latex stuff
+*.aux
+*.bbl
+*.blg
+*.idx
+*.lof
+*.log
+*.lot
+*.nlo
+*.synctex.gz
+*.toc
