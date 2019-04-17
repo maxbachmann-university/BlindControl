@@ -5,28 +5,7 @@
 % UseCase(s)
 
 \section{Requirements}
-Die Anforderungen an gesamte System wurden in Requirements geschrieben. Zusätzlich dazu wurde für Jedes eine Kategorie festgelegt, für die es gilt.
-
-\textit{Kategorie:} \textbf{F}(Funktional); \textbf{IF}(Interface);
- \textbf{Q}(Quality)\\
-\textit{Verifikationsmethode:} \textbf{S}(Similaris); \textbf{I}(Inspektion); 
-\textbf{R}(Review); \textbf{M}(Measurement);
-\textbf{A}(Analysis); \textbf{T}(Test)
-%Kategorie:
-%\begin{itemize}
-%	\item F = Funktional
-%	\item IF = Interface
-%	\item Q = Quality
-%\end{itemize}
-%Verifikationsmethode:
-%\begin{itemize}
-%	\item S(imiliaris)
-%	\item I(nspection)
-%	\item R(eview)
-%	\item M(easurement)
-%	\item A(nalysis)
-%	\item T(est)
-%\end{itemize}
+Am Anfang mussten die Anforderungen an das System entworfen werden, um später genau zu wissen, was das fertige Produkt am Ende für Funktionen besitzen soll. Diese Anforderungen wurden in Requirements gefasst und in der Tabelle~\ref{tab:requirements} festgehalten.
 
 
 % Please add the following required packages to your document preamble:
@@ -36,7 +15,14 @@ Die Anforderungen an gesamte System wurden in Requirements geschrieben. Zusätzl
 % \usepackage{longtable}
 % Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
 \begin{longtable}[ht]{p{0.03\textwidth}  p{0.8\textwidth} p{0.04\textwidth} p{0.04\textwidth}}
-	
+	\captionabove[Requirements des Systems]{Requirements des Systems}\\
+	\label{tab:requirements}\\
+	\textit{Kategorie:}~\textbf{F}(Funktional);~\textbf{IF}(Interface);~
+	\textbf{Q}(Quality)\\
+	\textit{Verifikationsmethode:}~\textbf{S}(Similaris);~\textbf{I}(Inspektion);~
+	\textbf{R}(Review);~\textbf{M}(Measurement);~
+	\textbf{A}(Analysis);~\textbf{T}(Test)\\ 
+	\\
 	\toprule
 	\rowcolor[HTML]{FFFC9E} 
 	{\color[HTML]{333333} \textbf{Nr.}} & {\color[HTML]{333333} \textbf{Beschreibung}}  & {\color[HTML]{333333} \textbf{Kat.}} & {\color[HTML]{333333} \textbf{VM}} \\* \midrule
@@ -49,27 +35,36 @@ Die Anforderungen an gesamte System wurden in Requirements geschrieben. Zusätzl
 	{\color[HTML]{333333} \textbf{Nr.}} & {\color[HTML]{333333} \textbf{Beschreibung}}  & {\color[HTML]{333333} \textbf{Kat.}} & {\color[HTML]{333333} \textbf{VM}} \\* \midrule
 	\endhead
 	%
-	1 & Das System soll modular in einen Regler, ein Sensormodul und eine Aktorsteuerung aufgeteilt sein                                                                                                                                                                                          & F & T \\* \midrule
-	2 & Das System soll die Position einer Jalousie zwischen 0\% und 100\% einstellen können                                                                                                                                          & F& T                                   \\* \midrule
-	3 & Der Sollwert für die Jalousieposition soll mit Home Assistant (Smarthome Plattform) manuell einstellbar sein                                                                                                & IF & T                                  \\* \midrule
-	4 & Der Sollwert für die Jalousieposition soll eine Schnittstelle zur manuellen Einstellung der Jalousieposition bieten sein                                                                                                                                    & IF& T                                   \\* \midrule
-	5 & Der Sollwert für die Jalousieposition soll entsprechend der Helligkeit einstellbar sein                                                                                                                                      & IF& T                                   \\* \midrule
-	6 & Der Sollwert für die Jalousieposition soll entsprechend der Windstärke einstellbar sein                                                                                                                                    & IF& T                                   \\* \midrule
-	7 & Das System soll aktuelle Sensorwerte ausgeben                                                                                                                                  & IF& T                                   \\* \midrule
-	8 & Das System soll die neue Jalousieposition ausgeben                                                                                                                                       & IF& T                                   \\* \midrule
-	9 & Die aktuelle Helligkeit soll mit Homeassistant angezeigt werden können                                                                                                                                 & IF& T                                   \\* \midrule
-	10 & Die aktuelle Windstärke soll mit Homeassistant angezeigt werden können                                                                                                                                    & IF& T                                   \\* \midrule
-	11 & Die neue Jalousieposition soll mit Homeassistant angezeigt werden können 	                                                                                                                                     & IF& T                                   \\* \midrule
-	12 & Das Sensormodul soll netzunabhängig betrieben werden.                                                                                                                                  & F& I                                   \\* \midrule
-	13 & Die Batterie des Sensormoduls soll mindestens 1 Jahr überdauern                                                                                                                                     & F& T                                   \\* \midrule
-	14 & Die Batterie des Sensormoduls soll austauschbar sein                                                                                                                                      & F& I                                  \\* \midrule
-	15 & Das System soll 1 mal pro Sekunde aktualisiert werden                                                                                                                                      & F& T                                   \\* \midrule
-	16 & Das System (bis auf das Sensormodul) soll über eine externe Spannungsversorgung betrieben werden                                                                                                                                     & F& T                                   \\* \midrule
-	17 & Die aktuellen Sensorwerte sollen vom Sensormodul gemessen werden                                                                                                                                      & IF& T                                   \\* \bottomrule
+	1 & Das System soll modular in einen Regler, ein Sensormodul und eine Aktoransteuerung aufgeteilt sein. & F & T \\* \midrule
+	
+	2 & Das System soll die Position einer Jalousie zwischen 0\% und 100\% einstellen können. & F & T \\* \midrule
+	
+	3 & Der Sollwert für die Jalousieposition soll mit Hilfe einer Schnittstelle eine manuelle Einstellung der Jalousieposition bieten. & IF & T \\* \midrule
+	
+	4 & Der Sollwert für die Jalousieposition soll entsprechend der Helligkeit einstellbar sein. & IF& T \\* \midrule
+	
+	5 & Der Sollwert für die Jalousieposition soll entsprechend der Windstärke einstellbar sein. & IF& T \\* \midrule
+	
+	6 & Die aktuellen Sensorwerte sollen vom Sensormodul gemessen werden. & IF& T \\* \midrule
+	
+	7 & Das System soll aktuellen Sensorwerte ausgeben können. & IF & T \\* \midrule
+	
+	8 & Das System soll die neue Jalousieposition ausgeben können. & IF & T \\* \midrule
+	
+	9 & Das Sensormodul soll unabhängig vom Stromnetz betrieben werden können. & F & I \\* \midrule
+	
+	10 & Die Batterie des Sensormoduls soll mindestens 1 Jahr überdauern können. & F & T \\* \midrule
+	
+	11 & Die Batterie des Sensormoduls soll austauschbar sein. & F & I \\* \midrule
+	
+	12 & Das System soll 1 mal pro Sekunde aktualisiert werden. & F & T \\* \midrule
+	
+	13 & Das System (bis auf das Sensormodul) soll über eine externe Spannungsversorgung betrieben werden. & F & T \\* \bottomrule
+		
 \end{longtable}
 
 \section{UseCase}
-Die Abbildung~\ref{fig:UseCase} zeigt den normalen Anwendungsfall des Systems. Der Benutzer kann Einfluss auf die Jalousie Software nehmen, mittels HomeAssistent. Von diesem aus gehen die Befehle an den Regler und es werden aktuelle Informationen an die Statusanzeige gesendet. Der Regler wiederum entscheidet, ob eine Handlung nötig wird und kann dementsprechend Befehle an den Aktor senden, der den Motor der Jalousie steuert. Er kann auch seinen aktuellen Status an die Statusanzeige senden. Außer dem Benutzer kann zusätzlich eine Wartungsperson direkt auf die Jalousie Steuerung zugreifen und änderungen vornehmen.
+Die Abbildung~\ref{fig:UseCase} zeigt den normalen Anwendungsfall des Systems. Der Benutzer kann Einfluss auf die Jalousie Software nehmen, zum Beispiel HomeAssistent. Von dieser aus gehen Befehle über die Schnittstelle an den Regler und es werden aktuelle Informationen über den Zustand wiederum über die Schnittstelle gesendet, um sie dann auf einer Statusanzeige anzeigen zu können. Der Regler wiederum entscheidet, ob eine Handlung nötig wird und kann dementsprechend Befehle an den Aktor senden, der den Motor der Jalousie steuert. Außer dem Benutzer kann zusätzlich eine Wartungsperson direkt auf die Jalousie Steuerung zugreifen und Änderungen vornehmen.
 \begin{figure}[hbt]
 	\centering
 	\includegraphics[width=1\linewidth]{images/UseCase}
