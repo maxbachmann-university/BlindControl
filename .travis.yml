@@ -3,15 +3,15 @@ dist: trusty
 before_install:
 - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
 script:
-- mkdir _build
-- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build Dokumentation/BlindControl_Doku/BlindControl_Doku.tex
+- cd Dokumentation/BlindControl_Doku
+- pdflatex -interaction=nonstopmode -halt-on-error BlindControl_Doku.tex
 deploy:
   provider: releases
   api_key:
     secure:
     - "$GITHUB_API_KEY"
   file:
-  - _build/snips.pdf
+  - BlindControl_Doku.pdf
   skip_cleanup: true
   on: 
 tags: true
