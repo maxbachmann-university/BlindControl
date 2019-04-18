@@ -1,9 +1,7 @@
 sudo: required
 dist: trusty
 before_install:
-- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
-  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-german latex-xcolor
-  texlive-pictures
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
 script:
 - mkdir _build
 - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build Dokumentation/BlindControl_Doku/BlindControl_Doku.tex
@@ -17,6 +15,3 @@ deploy:
   skip_cleanup: true
   on: 
 tags: true
-env:
-  global:
-    secure: TOWwzTTy5aDpH98WpOirLZIoGtwdgtHDlA2UsBJrWLRtHipbmkEpbD7at1UWYa6LZU/M4wwnq5QwRerVa65dUaflzlB05AumnxzJv87SPmPK3ERON4a74v00lqlVxBQL9C7F6BdMyUsE19Ypv9/UAzTpxGVpoV2TwPHrn2lQkmXZq01nb+6NnVop5tG7bZ0OiCdVleZ3jfdBo2cuWQF54Bp4u9CtJtCjztgO7LZ5xJMR4BXrYfUTKhegbrrQ//PS7Pr/y7JEa5mjslzrvrISz56l6eV4Gp2k2jsudNvWisg23KVCvx8B/oF7JJaLh3hnA4jTAVgrxuCQxqS9T4VWMCXjtD79WWP+RfkuWcp41NYnXReyjj56ryXknQ9Vo0TRqSKHNAIFaU1SAhvHft2GDOJRos/SPHggeao3Qko/Ox0PiMA9fzpnFk5gSXRUAgXvImakr6ndqgSduK3i/0YNs6e9CtWTWfEpRH1zKXkZ4T24jGFCmEgykkvlEEQbnYtrawCh8k3u/YAzaLMjggsXWgwZ6VbrtzTNpUkQHC2Mi1hNqartmw7WmsBjQGjgfgah+x32Ysi0UWJHFAaI+9dzBdyk0hrtuJ+Nlyzj+JVJ9Cg3T+kXmHwBYb6I/qSRaCY4Z7T1nC3mKtjW/2MhgOuqet/SUVWoYQo+2htYBndy/3I=
