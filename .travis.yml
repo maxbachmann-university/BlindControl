@@ -1,0 +1,21 @@
+sudo: required
+dist: trusty
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
+  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
+script:
+- mkdir _build
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build Dokumentation/BlindControl_Doku/BlindControl_Doku.tex
+deploy:
+  provider: releases
+  api_key:
+    secure:
+    - "$GITHUB_API_KEY"
+  file:
+  - _build/snips.pdf
+  skip_cleanup: true
+  on: 
+tags: true
+env:
+  global:
+    secure: v38yH7THC7lCZ/EAAvwp9fO+qmhYTN9xEbGV0RbGM8P/5TnOVqS6gVpBO60kyMdwBt2ERSYFwJGHZtreELWDiDbU+GhbbgvWWlal23csGwjYTlk1h/HQT8vmsdjxla1XgfTw1AmFsBJu7c5MzUsm9lZJWUMNOBSTXWwIlK4H+iAhE5f4zU2oAlADELL6fAbIMcO980SwJAWfRyAUY+IdjWXloe7cN7qlS1ybzsHz5lXv2+wUosEPjaBD02w/K+hr7Lmb48BUYzotYzYURb9nQDFLREX2ucoJBRkx3YO4+XSXlTY+ut8nJd0l4eGw3CcbbiSpsmXP2TNbtxdEsZJ1IBwH8Jinf0icZ1PVai/RvkWfUVKaHbXcGKnl/R0vXPRNYKhpNKQqKYTwPIPLMDs7mdOQJJ3z0MdyD5fTcvaOhQrO1kDvMPwQcpOREgGLOctoV7DZsGkGPsFQIvUW1ApzFyXa2bEv4D1DUUfVsE7lBa2okhx8+N2qEkiyaXGdpIA6JTycS2cfbzf72UEi+MzhvbYwRF4RsKWzosHNMQ7JSIh4I1sRPT7FGSqDciHpYhvZSygfRnENQoLq48+0xq7FdDZCWfnsFPDYGNWf1wgP6K8FwKc8E6oWdF2XQuqf4NVh4zwSRTOoJKzDywbkhB3jUDqXMJQpKY4WCxeIY8IUIJM=
