@@ -1,0 +1,39 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{Abb.}]\begingroup Abbildung\nomeqref {\relax 8.0}
+		\nompageref{12}
+  \item [{bzw.}]\begingroup beziehungsweise\nomeqref {\relax 8.0}
+		\nompageref{12}
+  \item [{DHBW}]\begingroup Duale Hochschule Baden-Württemberg\nomeqref {\relax 8.0}
+		\nompageref{12}
+  \item [{ebd.}]\begingroup ebenda\nomeqref {\relax 8.0}\nompageref{12}
+  \item [{et al.}]\begingroup at alii\nomeqref {\relax 8.0}
+		\nompageref{12}
+  \item [{etc.}]\begingroup et cetera\nomeqref {\relax 8.0}
+		\nompageref{12}
+  \item [{evtl.}]\begingroup eventuell\nomeqref {\relax 8.0}
+		\nompageref{12}
+  \item [{f.}]\begingroup folgende Seite\nomeqref {\relax 8.0}
+		\nompageref{12}
+  \item [{ff.}]\begingroup fortfolgende Seiten\nomeqref {\relax 8.0}
+		\nompageref{12}
+  \item [{ggf.}]\begingroup gegebenenfalls\nomeqref {\relax 8.0}
+		\nompageref{12}
+  \item [{Hrsg.}]\begingroup Herausgeber\nomeqref {\relax 8.0}
+		\nompageref{12}
+  \item [{Tab.}]\begingroup Tabelle\nomeqref {\relax 8.0}
+		\nompageref{12}
+  \item [{u. a.}]\begingroup unter anderem\nomeqref {\relax 8.0}
+		\nompageref{12}
+  \item [{usw.}]\begingroup und so weiter\nomeqref {\relax 8.0}
+		\nompageref{12}
+  \item [{vgl.}]\begingroup vergleiche\nomeqref {\relax 8.0}
+		\nompageref{12}
+  \item [{z. B.}]\begingroup zum Beispiel\nomeqref {\relax 8.0}
+		\nompageref{12}
+  \item [{z. T.}]\begingroup zum Teil\nomeqref {\relax 8.0}
+		\nompageref{12}
+
+\end{thenomenclature}
