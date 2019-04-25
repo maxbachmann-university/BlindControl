@@ -1,20 +1,12 @@
 sudo: required
 dist: trusty
-before_install:
-- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
+install:
+ - source ./texlive_install.sh
+cache:
+  directories:
+    - /tmp/texlive
+    - $HOME/.texlive
 script:
-- cd Dokumentation/BlindControl_Doku
-- pdflatex -interaction=nonstopmode -halt-on-error BlindControl_Doku.tex
-- pdflatex -interaction=nonstopmode -halt-on-error BlindControl_Doku.tex
-- pdflatex -interaction=nonstopmode -halt-on-error BlindControl_Doku.tex
-
-deploy:
-  provider: releases
-  api_key:
-    secure:
-    - "$GITHUB_API_KEY"
-  file:
-  - BlindControl_Doku.pdf
-  skip_cleanup: true
-  on: 
-tags: true
+- mkdir _build
+# Prefix command with travis_wait x so it times out after 3 mins
+- travis_wait 3 pdflatex -output-directory _build ./Dokumentation/BlindControl_Doku/BlindControl_Doku.tex
