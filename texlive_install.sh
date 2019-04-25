@@ -32,7 +32,8 @@ tlmgr install   \
   amsfonts      \
   stmaryrd      \
   amsmath       \
-  koma-script
+  koma-script   \
+  ucs
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
