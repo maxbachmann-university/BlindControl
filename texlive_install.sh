@@ -38,7 +38,8 @@ tlmgr install   \
   collection-fontsrecommended \
   caption       \
   xcolor        \
-  booktabs
+  booktabs      \
+  pdfpages
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
