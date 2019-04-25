@@ -1,9 +1,7 @@
 sudo: required
 dist: trusty
 before_install:
-- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
-  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-german latex-xcolor
-  pgf texlive-bibtex-extra biber
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
 script:
 - cd Dokumentation/BlindControl_Doku
 - pdflatex -interaction=nonstopmode -halt-on-error BlindControl_Doku.tex
