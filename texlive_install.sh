@@ -36,7 +36,8 @@ tlmgr install   \
   ucs           \
   babel-german  \
   collection-fontsrecommended \
-  caption
+  caption       \
+  xcolor
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
