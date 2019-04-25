@@ -41,7 +41,8 @@ tlmgr install   \
   booktabs      \
   pdfpages      \
   enumitem      \
-  nomencl
+  nomencl       \
+  xkeyval
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
