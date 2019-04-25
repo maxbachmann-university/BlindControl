@@ -49,7 +49,7 @@ tlmgr install   \
   pgfplotstable \
   pgf           \
   tikz-cd       \
-  alphadin
+  din1505
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
