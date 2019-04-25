@@ -33,7 +33,8 @@ tlmgr install   \
   stmaryrd      \
   amsmath       \
   koma-script   \
-  ucs
+  ucs           \
+  babel-german
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
