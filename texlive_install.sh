@@ -37,7 +37,8 @@ tlmgr install   \
   babel-german  \
   collection-fontsrecommended \
   caption       \
-  xcolor
+  xcolor        \
+  booktabs
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
