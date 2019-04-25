@@ -44,7 +44,10 @@ tlmgr install   \
   nomencl       \
   xkeyval       \
   footmisc      \
-  listings
+  listings      \
+  pgfplots      \
+  pgfplotstable \
+  tikz
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
