@@ -8,17 +8,17 @@
 % mit state or Activity Diagram
 
 
-Die Abbildung %\ref{fig:Sequence_UseCase} zeigt die Kommunikation zwischen den einzelnen Modulen mithilfe von MQTTS. Die Darstellung der Kommunikation ist zur besseren Übersicht hierbei auf das minimum reduziert. Das Regler Modul dient zur Verwaltung aller Steuerungsinputs. Es kann sich hierbei sowohl um Inputs von Sensor Modulen, als auch um eine manuelle Ansteuerung handeln, die beispielsweise über eine Sprachsteuerung erfolgt. Auf Basis dieses Inputs entscheidet es welche Position die Jalousie anfahren soll. Die Anzahl an Sensor Modulen und Modulen die eine manuelle Ansteuerung vornehmen ist hierbei nicht begrenzt. Die anzusteuernde Position wird von dem Regler Modul wieder auf das entsprechende topic (message identifier) gesendet und kann anschließend von einer beliebigen Anzahl an Aktor Modulen ausgelesen werden.
+Die Abbildung \ref{fig:Sequence_UseCase} zeigt die Kommunikation zwischen den einzelnen Modulen mithilfe von MQTTS. Die Darstellung der Kommunikation ist zur besseren Übersicht hierbei auf das minimum reduziert. Das Regler Modul dient zur Verwaltung aller Steuerungsinputs. Es kann sich hierbei sowohl um Inputs von Sensor Modulen, als auch um eine manuelle Ansteuerung handeln, die beispielsweise über eine Sprachsteuerung erfolgt. Auf Basis dieses Inputs entscheidet es welche Position die Jalousie anfahren soll. Die Anzahl an Sensor Modulen und Modulen die eine manuelle Ansteuerung vornehmen ist hierbei nicht begrenzt. Die anzusteuernde Position wird von dem Regler Modul wieder auf das entsprechende topic (message identifier) gesendet und kann anschließend von einer beliebigen Anzahl an Aktor Modulen ausgelesen werden.
 
 Da der ESP32 über zwei Kerne verfügt und zudem bereits mit FreeRTOS ausgeliefert wird und dadurch über einen Scheduler verfügt, bietet sich die Nutzung von Tasks an. Zur Darstellung der Funktionsweise werden daher auch hier Sequenzdiagramme genutzt, die die Kommunikation zwischen den einzelnen Tasks zeigt. Abbildung \ref{fig:Sequence_UserInput} zeigt die Ansteuerung des Aktormoduls. Bei dem User handelt es sich in diesem Fall um das Regler Modul, welches die neue Position mithilfe von MQTTS verschlüsselt überträgt. Der MQTT Task liest die neue Position aus, prüft ob diese zwischen 0 und 100 Prozent liegt und überschreibt die alte Position in einer Queue der Größe 1. Der Motor Control Task liest die neue Position aus der Queue aus, steuert den Motor der Jalousie an um die entsprechende Position zu erreichen und speichert die neue Position anschließend im Flash des ESP32 um diese auch nach einem Neustart wieder abrufen zu können. Dennoch kann nicht ausgeschlossen werden, dass aufgrund eines Fehlers die aktuelle Position nicht mit der gespeicherten Position übereinstimmt. Dies hat zur Folge, dass die Jalousie außerhalb des vorgesehen Bereichs von 0-100 Prozent angesteuert wird und dadurch Schaden nimmt. Um dies zu verhindern macht es Sinn an den Bereichsenden, also bei 0 Prozent und 100 Prozent einen Endstopp einzusetzen.
 Abbildung \ref{fig:SequenceMotorControl} zeigt die Implementierung der Endstopps. Der Interrupt Task wird ausgeführt wenn ein Endstopp erreicht wird. Dieser schreibt die Information welcher Interrupt getriggert wurde in eine Queue der Größe 10, so dass auch mehrere Interrupts abgespeichert und dann sequentiell abgearbeitet werden können. Der GPIO Task ist ein Task der die Interrupts aus der Queue ausliest. Handelt es sich um einen Interrupt von einem Endstopp löscht er den Motor Control Task um so zu verhindern, dass dieser den Motor weiter außerhalb des vorgesehenen Bereichs ansteuert. Anschließend korrigiert er die aktuelle Position der Jalousie und speichert diese wieder im Flash ab. Nach der Korrektur erstellt er den Motor Control Task neu, so dass dieser die Position wieder entsprechend des Inputs ansteuern kann. Ein weitere Anforderung ist es auch beim Endkunden noch auf sicherem Weg Updates auf das Endgerät einspielen zu können. Abbildung \ref{fig:Sequence_Update} zeigt wie ein entsprechendes Update erfolgt. Hierbei werden zunächst Updateinformation von einem Webserver geladen. Diese beinhalten die Information welche Version der Anwendung am Aktuellsten ist und auf welchem Server diese sich befinden. Ist die Version der aktuellsten Version neuer als die aktuell eingesetzte Version, wird diese heruntergeladen. Der ESP32 startet anschließend mit der neuen Version neu. Scheitert dies fällt er zurück auf die alte Softwareversion. Zur Absicherung der Verbindung wird hierbei tls Verschlüsselung eingesetzt. Weiterhin ist es nicht möglich einen falschen Updateserver anzugeben, da dieser lokal auf dem Gerät hinterlegt ist und durch Secure Boot in Verbindung mit Flash Encryption kann auch ein lokales Einspielen anderer Software, sowie das Auslesen von Informationen wie WLAN Passwörtern wirkungsvoll verhindert werden. Damit bleibt nur die Möglichkeit die Updateinformationen direkt auf dem Server zu manipulieren. Standardmäßig werden OTA Updates mit MD5 gehasht, was nicht mehr als sicher gilt. Für eine Endanwendung wäre es daher sinnvoll stattdessen besipielsweise sha256 zu nutzen. Die vorliegende Implementierung macht hiervon aktuell jedoch keinen Gebrauch. Weiterhin ist die Sicherheit durch die genannten Sicherheitsvorkehrungen bedeutend höher als bei den aktuell üblichen IOT Geräten.
 
-%\begin{figure}[hbt]
-%	\centering
-%	\includegraphics[width=1\linewidth]{images/Sequence_UseCase}
-%	\caption[Sequence_UseCase]{Sequenz Diagramm für die Kommunikation zwischen den einzelnen Modulen}
-%	\label{fig:Sequence_UseCase}
-%\end{figure}
+\begin{figure}[hbt]
+	\centering
+	\includegraphics[width=1\linewidth]{images/Sequence_UseCase}
+	\caption[Sequence UseCase]{Sequenz Diagramm für die Kommunikation zwischen den einzelnen Modulen}
+	\label{fig:Sequence_UseCase}
+\end{figure}
 
 \begin{figure}[hbt]
 	\centering
@@ -37,6 +37,6 @@ Abbildung \ref{fig:SequenceMotorControl} zeigt die Implementierung der Endstopps
 \begin{figure}[hbt]
 	\centering
 	\includegraphics[width=0.7\linewidth]{images/Sequence_Update}
-	\caption[Sequence_Update]{Sequenz Diagramm zum Ablauf eines Updates}
+	\caption[Sequence Update]{Sequenz Diagramm zum Ablauf eines Updates}
 	\label{fig:Sequence_Update}
 \end{figure}
