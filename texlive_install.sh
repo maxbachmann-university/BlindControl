@@ -42,7 +42,8 @@ tlmgr install   \
   pdfpages      \
   enumitem      \
   nomencl       \
-  xkeyval
+  xkeyval       \
+  footmisc
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
