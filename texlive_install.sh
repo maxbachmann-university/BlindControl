@@ -48,7 +48,8 @@ tlmgr install   \
   pgfplots      \
   pgfplotstable \
   pgf           \
-  tikz-cd
+  tikz-cd       \
+  alphadin
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
