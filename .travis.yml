@@ -12,4 +12,3 @@ script:
 - travis_wait 3 pdflatex BlindControl_Doku.tex
 - travis_wait 3 bibtex BlindControl_Doku
 - travis_wait 3 pdflatex BlindControl_Doku.tex
-- cat BlindControl_Doku.log
