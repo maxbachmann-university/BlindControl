@@ -35,7 +35,8 @@ tlmgr install   \
   koma-script   \
   ucs           \
   babel-german  \
-  collection-fontsrecommended
+  collection-fontsrecommended \
+  caption
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
