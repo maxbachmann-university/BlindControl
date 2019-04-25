@@ -6,7 +6,7 @@ before_install:
   pgf
 script:
 - cd Dokumentation/BlindControl_Doku
-- pdflatex -interaction=nonstopmode -halt-on-error BlindControl_Doku.tex
+- for ((n=0;n<3;++n)); do pdflatex -interaction=nonstopmode -halt-on-error BlindControl_Doku.tex; done
 deploy:
   provider: releases
   api_key:
