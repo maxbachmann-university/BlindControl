@@ -1,0 +1,34 @@
+install:
+ - source ./texlive_install.sh
+cache:
+  directories:
+    - /tmp/texlive
+    - $HOME/.texlive
+script:
+- cd Dokumentation/BlindControl_Doku
+# Prefix command with travis_wait x so it times out after 3 mins
+- travis_wait 3 pdflatex BlindControl_Doku.tex
+- travis_wait 3 bibtex BlindControl_Doku
+- travis_wait 3 pdflatex BlindControl_Doku.tex
+
+before_deploy:
+  - git tag -f travis-latest
+  - git remote add gh https://${TRAVIS_REPO_SLUG%/*}:${GITHUB_API_KEY}@github.com/${TRAVIS_REPO_SLUG}.git
+  - git push -f gh travis-latest
+  - git remote remove gh
+
+deploy:
+  provider: releases
+  api_key:
+    secure:
+    - "$GITHUB_API_KEY"
+  file:
+  - BlindControl_Doku.pdf
+  skip_cleanup: true
+  name: documentation release
+  body: Automatic documentation build of $TRAVIS_BRANCH ($TRAVIS_COMMIT) built by Travis CI on $(date +'%F %T %Z').
+  prerelease: false
+  overwrite: true
+  target_commitish: $TRAVIS_COMMIT
+  on:
+    branch: master

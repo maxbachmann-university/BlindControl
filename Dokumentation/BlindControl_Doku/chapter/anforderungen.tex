@@ -1,0 +1,73 @@
+\chapter{Anforderungen}
+\label{cha:Anforderungen}
+
+% Tabelle Requirements
+% UseCase(s)
+
+\section{Requirements}
+Am Anfang mussten die Anforderungen an das System entworfen werden, um später genau zu wissen, was das fertige Produkt am Ende für Funktionen besitzen soll. Diese Anforderungen wurden in Requirements gefasst und in der Tabelle~\ref{tab:requirements} festgehalten.
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+\begin{longtable}[ht]{p{0.03\textwidth}  p{0.8\textwidth} p{0.04\textwidth} p{0.04\textwidth}}
+	\captionabove[Requirements des Systems]{Requirements des Systems}\\
+	\label{tab:requirements}\\
+	\textit{Kategorie:}~\textbf{F}(Funktional);~\textbf{IF}(Interface);~
+	\textbf{Q}(Quality)\\
+	\textit{Verifikationsmethode:}~\textbf{S}(Similaris);~\textbf{I}(Inspektion);~
+	\textbf{R}(Review);~\textbf{M}(Measurement);~
+	\textbf{A}(Analysis);~\textbf{T}(Test)\\ 
+	\\
+	\toprule
+	\rowcolor[HTML]{FFFC9E} 
+	{\color[HTML]{333333} \textbf{Nr.}} & {\color[HTML]{333333} \textbf{Beschreibung}}  & {\color[HTML]{333333} \textbf{Kat.}} & {\color[HTML]{333333} \textbf{VM}} \\* \midrule
+	\endfirsthead
+	%
+	\multicolumn{4}{c}%
+	{{\bfseries Table \thetable\ continued from previous page}} \\
+	\toprule
+	\rowcolor[HTML]{FFFC9E} 
+	{\color[HTML]{333333} \textbf{Nr.}} & {\color[HTML]{333333} \textbf{Beschreibung}}  & {\color[HTML]{333333} \textbf{Kat.}} & {\color[HTML]{333333} \textbf{VM}} \\* \midrule
+	\endhead
+	%
+	1 & Das System soll modular in einen Regler, ein Sensormodul und eine Aktoransteuerung aufgeteilt sein. & F & T \\* \midrule
+	
+	2 & Das System soll die Position einer Jalousie zwischen 0\% und 100\% einstellen können. & F & T \\* \midrule
+	
+	3 & Der Sollwert für die Jalousieposition soll mit Hilfe einer Schnittstelle eine manuelle Einstellung der Jalousieposition bieten. & IF & T \\* \midrule
+	
+	4 & Der Sollwert für die Jalousieposition soll entsprechend der Helligkeit einstellbar sein. & IF& T \\* \midrule
+	
+	5 & Der Sollwert für die Jalousieposition soll entsprechend der Windstärke einstellbar sein. & IF& T \\* \midrule
+	
+	6 & Die aktuellen Sensorwerte sollen vom Sensormodul gemessen werden. & IF& T \\* \midrule
+	
+	7 & Das System soll aktuellen Sensorwerte ausgeben können. & IF & T \\* \midrule
+	
+	8 & Das System soll die neue Jalousieposition ausgeben können. & IF & T \\* \midrule
+	
+	9 & Das Sensormodul soll unabhängig vom Stromnetz betrieben werden können. & F & I \\* \midrule
+	
+	10 & Die Batterie des Sensormoduls soll mindestens 1 Jahr überdauern können. & F & T \\* \midrule
+	
+	11 & Die Batterie des Sensormoduls soll austauschbar sein. & F & I \\* \midrule
+	
+	12 & Das System soll 1 mal pro Sekunde aktualisiert werden. & F & T \\* \midrule
+	
+	13 & Das System (bis auf das Sensormodul) soll über eine externe Spannungsversorgung betrieben werden. & F & T \\* \bottomrule
+		
+\end{longtable}
+
+\section{UseCase}
+Die Abbildung~\ref{fig:UseCase} zeigt den normalen Anwendungsfall des Systems. Der Benutzer kann Einfluss auf die Jalousie Software nehmen, zum Beispiel HomeAssistent. Von dieser aus gehen Befehle über die Schnittstelle an den Regler und es werden aktuelle Informationen über den Zustand wiederum über die Schnittstelle gesendet, um sie dann auf einer Statusanzeige anzeigen zu können. Der Regler wiederum entscheidet, ob eine Handlung nötig wird und kann dementsprechend Befehle an den Aktor senden, der den Motor der Jalousie steuert. Außer dem Benutzer kann zusätzlich eine Wartungsperson direkt auf die Jalousie Steuerung zugreifen und Änderungen vornehmen.
+\begin{figure}[hbt]
+	\centering
+	\includegraphics[width=1\linewidth]{images/UseCase}
+	\caption[UseCase Diagramm]{UseCase Diagramm für den normalen Anwendungsfall.}
+	\label{fig:UseCase}
+\end{figure}
