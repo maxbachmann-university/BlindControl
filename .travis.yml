@@ -8,7 +8,7 @@ script:
 - cd Dokumentation/BlindControl_Doku
 # Prefix command with travis_wait x so it times out after 3 mins
 - travis_wait 3 pdflatex BlindControl_Doku.tex
-- travis_wait 3 bibtex BlindControl_Doku
+- travis_wait 3 bibtex BlindControl_Doku || true
 - travis_wait 3 pdflatex BlindControl_Doku.tex
 
 before_deploy:
