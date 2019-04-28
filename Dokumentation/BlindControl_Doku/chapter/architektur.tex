@@ -3,6 +3,13 @@
 
 \section{Statische Architektur}
 % mit Component diagramm
+Wie in Kapitel~\ref{cha:Einführung} bereits erwähnt, wird das System BlindControl in drei Komponente unterteilt. Hierfür ist in Abbildung~\ref{fig:component_diagramm} ein Component Diagramm abgebildet. Das ''Sensor Modul'' misst demnach die aktuelle Helligkeit und Windstärke und gibt diese weiter auf den entsprechenden MQTT Topic. Von dort kann der ''Regler'' die aktuellen Sensordaten lesen und mit dem ihm vermittelten Sollwerten vergleichen. Wird eine neue Position angefahren, gibt der Regler den neuen Beschattungsstand aus und vermittelt ihn mittels MQTTs dem ''Aktor Modul''. Dieses wiederum kann damit die Jalousie ansteuern und auf die neue Position fahren.
+\begin{figure}[hbt]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/Component}
+	\caption[Component Diagramm]{Component Diagramm aller verwendeter Komponenten des Systems.}
+	\label{fig:component_diagramm}
+\end{figure}
 
 \section{Verhalten}
 % mit state or Activity Diagram

@@ -23,9 +23,8 @@ Das Grafik \ref{fig:time_plan} zeigt den Zeitbedarf für die einzelnen Arbeitspa
 \end{figure}
 
 
-\section{Kosten}
-
-\subsection{Schätzung in der Planungsphase}
+\section{Kostenschätzung}
+\label{cha:Planung_cost}
 In der Planungsphase wurde angenommen, dass mit anderen Mikrocontrollern und damit einem höheren Aufwand gearbeitet wird. Damit ergeben sich gesamt 2200 SLOC. Die Vorlesung Mikrocontroller umfasst 64h und somit ergibt sich im Schnitt 34 lines/h, die geschrieben werden müssen. Die Kostenschätzung nach COCOMOII\_2000.4 ist in Abbildung~\ref{fig:cost_plan} zu sehen.
 
 \begin{figure}[hbt]
@@ -33,13 +32,4 @@ In der Planungsphase wurde angenommen, dass mit anderen Mikrocontrollern und dam
 	\includegraphics[width=1\linewidth]{images/cost_plan_img}
 	\caption[Kostenschätzung Planung]{Kostenschätzung bei der Planung.}
 	\label{fig:cost_plan}
-\end{figure}
-
-\subsection{Realität}
-In der Umsetzung wurden schließlich 1540 SLOC geschrieben. Zusätzlich zu den 64h der Vorlesung wurden noch 8h weitere benötigt. Damit ergibt sich im Schnitt 21 lines/h. Die tatsächlichen Kosten sind in Abbildung~\ref{fig:cost_end} dargestellt.
-\begin{figure}[hbt]
-	\centering
-	\includegraphics[width=1\linewidth]{images/cost_end_img}
-	\caption[Kosten Realität]{Reale Kosten am Ende des Projekts.}
-	\label{fig:cost_end}
 \end{figure}
