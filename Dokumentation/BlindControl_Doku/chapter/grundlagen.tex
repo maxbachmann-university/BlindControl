@@ -1,0 +1,21 @@
+\chapter{Grundlagen}
+\label{cha:Grundlagen}
+
+\section{MQTT (Message Queue Telemetry Transport)}
+
+\subsection{Allgemein}
+Bei MQTT handelt es sich um ein einfaches TCP/IP basiertes Nachrichtenprotokoll, das auf den Bereich Mobile und Internet of Things zugeschnitten ist. MQTT ist gerade im Bereich der Homeautomation sehr beliebt.
+
+Ziele von MQTT sind neben einer hohen Zuverlässigkeit ein sparsamer Umgang mit Bandbreite und Ressourcen. Dadurch eignet sich MQTT auch zur Kommunikation mit mobilen Geräten bei denen Bandbreite und Ressourcen knapp sind. Für besonders stromsparende Geräte wie beispielsweise Sensoren gibt es weiterhin das Nachrichtenprotokoll MQTT-SN (MQTT for Sensor Networks), welches auf UDP und dadurch nicht den TCP/IP Stack benötigt. Auf MQTT-SN wird näher eingegangen.
+
+\subsection{Publish/Subscribe Verfahren}
+Der Nachrichtenaustausch bei MQTT funktioniert über das Publish/Subscribe Muster. Bei Publish/Subscribe kommuniziert der Sender der Nachricht nicht direkt mit dem Empfänger, sondern wendet sich an einen Broker, welcher die Zustellung der Nachricht übernimmt. Der Broker entkoppelt so den Sender vom Empfänger der Nachrichten.
+
+\subsection{MQTTS (Message Queue Telemetry Transport Secure)}
+Bei MQTTS wird die Kommunikation mit TLS/SSL verschlüsselt. Damit wird ein abhören der Nachrichten erschwert.
+
+\section{TLS(Transport Layer Security)}
+TLS (Vorgänger SSL[Secure Sockets Layer]) ist ein Verschlüsselungsprotokoll zur Verschlüsselung einer Kommunikation. Dabei werden am Anfang Zertifikate zwischen zwei Kommunikationspartnern ausgetauscht mittels eines public key. Dabei identifizieren sich beide nacheinander, bevor dann eine verschlüsselte Verbindung aufgebaut ist.
+
+\section{ESP32}
+Der ESP32 wurde von Espressif hergestellt und besitzt ein schon eingebautes W-LAN Modul. Damit kann er entweder ein eigenes W-LAN Netzwerk aufbauen, oder mit einem vorhandenen Netzwerk kommunizieren, ohne zusätzliche Shields zu benötigen, wie ein Arduino. Der Mikrocontroller kann mit entsprechenden Librarys in der Arduino IDE programmiert werden, oder in der ESP IDF Umgebung\footnote{siehe Kapitel~\ref{cha:Installation}} mit der Sprache C.
