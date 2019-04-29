@@ -15,11 +15,11 @@ Abbildung~\ref{fig:deployment_diagramm} zeigt das Deployment Diagramm des System
 \section{Sensor und Aktor Modul (ESP32)}
 \label{cha:Installation_IDF}
 \subsection{Schritt 1: Installation der ESP IDF}
-Um die ESP32 Mikrocontroller flashen zu können, muss zunächst die Espressif IoT Development Framework (ESP IDF) installiert und eingerichtet werden. An dieser Stelle sei auf die \href{https://docs.espressif.com/projects/esp-idf/en/latest/index.html}{Dokumentation von Espressif} hingewiesen, um die Programmierumgebung abhängig vom Betriebssystem richtig einzurichten.
+Um die ESP32 Mikrocontroller flashen zu können, muss zunächst die Espressif IoT Development Framework (ESP IDF)\nomenclature{ESP IDF}{Espressif IoT Development Framework} installiert und eingerichtet werden. An dieser Stelle sei auf die \href{https://docs.espressif.com/projects/esp-idf/en/latest/index.html}{Dokumentation von Espressif} hingewiesen, um die Programmierumgebung abhängig vom Betriebssystem richtig einzurichten.
 
 \subsection{Schritt 2: Anpassung der Konfiguration}
 Der Quellcode für beide Module kann auf Github heruntergeladen werden: \href{https://github.com/maxbachmann-university/esp32-sensor-modul}{Sensor Modul}, \href{https://github.com/maxbachmann-university/esp32-actuator-module}{Aktor Modul}.
-Anschließend wechselt man mit der Konsole in das jeweilige Verzeichnis. Mit dem Befehl \textbf{''make menuconfig''} wird die Konfiguration vorgenommen. Es öffnet sich ein Dialog, wie in Abbildung~\ref{fig:config_start} dargestellt. Unter dem ersten Menüpunkt kann der Port festgelegt werden, an welchen der ESP32 am Computer angeschlossen wurde. Unter ''Example Configuration'' können wie in Abbildung~\ref{fig:config_default} gezeigt die Verbindungsdaten des W-LAN, des MQTT Brokers und des OTA(Over the air Update) Servers angepasst werden. Diese Konfiguration wird anschließend gespeichert.
+Anschließend wechselt man mit der Konsole in das jeweilige Verzeichnis. Mit dem Befehl \textbf{''make menuconfig''} wird die Konfiguration vorgenommen. Es öffnet sich ein Dialog, wie in Abbildung~\ref{fig:config_start} dargestellt. Unter dem ersten Menüpunkt kann der Port festgelegt werden, an welchen der ESP32 am Computer angeschlossen wurde. Unter ''Example Configuration'' können wie in Abbildung~\ref{fig:config_default} gezeigt die Verbindungsdaten des WLAN, des MQTT Brokers und des OTA Servers angepasst werden. Diese Konfiguration wird anschließend gespeichert.
 
 \begin{figure}[hbt]
 	\centering

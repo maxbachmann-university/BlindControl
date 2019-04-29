@@ -198,15 +198,15 @@ marginal
 
 % -----Ausgabe aller Verzeichnisse ---
 \setlength{\parskip}{0.5\baselineskip}
-\renewcommand{\indexname}{Sachwortverzeichnis}
+%\renewcommand{\indexname}{Sachwortverzeichnis}
 %\printindex								% Erzeugen des Indexverzeichnises
-\addcontentsline{toc}{chapter}{\indexname}
+%\addcontentsline{toc}{chapter}{\indexname}
 \input{pages/abkuerzungen}				% Datei mit allgemeinen Abkürzungen laden
 \renewcommand{\nomname}{Verzeichnis verwendeter Formelzeichen und Abkürzungen}
 \setlength{\nomlabelwidth}{.20\hsize}
 \renewcommand{\nomlabel}[1]{#1 \dotfill}
 \setlength{\nomitemsep}{-\parsep}
-%\printnomenclature						% Erzeugen des Abkürzungsverzeichnises, siehe auch Inhalt der Datei pages/abkuerzungen.tex
+\printnomenclature						% Erzeugen des Abkürzungsverzeichnises, siehe auch Inhalt der Datei pages/abkuerzungen.tex
 \cleardoublepage
 %\renewcommand{\glossaryname}{Glossar}
 %\printglossaries
