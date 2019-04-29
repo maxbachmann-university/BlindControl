@@ -2,38 +2,39 @@
 
  \nomgroup{A}
 
-  \item [{Abb.}]\begingroup Abbildung\nomeqref {\relax 10.0}
-		\nompageref{26}
+  \item [{Abb.}]\begingroup Abbildung\nomeqref {\relax 9.0}
+		\nompageref{27}
   \item [{ADC}]\begingroup Analog-to-Digital Converter\nomeqref {\relax 5.0}
 		\nompageref{12}
-  \item [{bzw.}]\begingroup beziehungsweise\nomeqref {\relax 10.0}
-		\nompageref{26}
-  \item [{DHBW}]\begingroup Duale Hochschule Baden-Württemberg\nomeqref {\relax 10.0}
-		\nompageref{26}
-  \item [{ebd.}]\begingroup ebenda\nomeqref {\relax 10.0}
-		\nompageref{26}
+  \item [{bzw.}]\begingroup beziehungsweise\nomeqref {\relax 9.0}
+		\nompageref{27}
+  \item [{CI}]\begingroup Continous Integration\nomeqref {\relax 9.0}
+		\nompageref{25}
+  \item [{DHBW}]\begingroup Duale Hochschule Baden-Württemberg\nomeqref {\relax 9.0}
+		\nompageref{27}
+  \item [{ebd.}]\begingroup ebenda\nomeqref {\relax 9.0}\nompageref{27}
   \item [{ESP IDF}]\begingroup Espressif IoT Development Framework\nomeqref {\relax 8.0}
-		\nompageref{19}
-  \item [{et al.}]\begingroup at alii\nomeqref {\relax 10.0}
-		\nompageref{26}
-  \item [{etc.}]\begingroup et cetera\nomeqref {\relax 10.0}
-		\nompageref{26}
-  \item [{evtl.}]\begingroup eventuell\nomeqref {\relax 10.0}
-		\nompageref{26}
-  \item [{f.}]\begingroup folgende Seite\nomeqref {\relax 10.0}
-		\nompageref{26}
-  \item [{ff.}]\begingroup fortfolgende Seiten\nomeqref {\relax 10.0}
-		\nompageref{26}
-  \item [{ggf.}]\begingroup gegebenenfalls\nomeqref {\relax 10.0}
-		\nompageref{26}
+		\nompageref{21}
+  \item [{et al.}]\begingroup at alii\nomeqref {\relax 9.0}
+		\nompageref{27}
+  \item [{etc.}]\begingroup et cetera\nomeqref {\relax 9.0}
+		\nompageref{27}
+  \item [{evtl.}]\begingroup eventuell\nomeqref {\relax 9.0}
+		\nompageref{27}
+  \item [{f.}]\begingroup folgende Seite\nomeqref {\relax 9.0}
+		\nompageref{27}
+  \item [{ff.}]\begingroup fortfolgende Seiten\nomeqref {\relax 9.0}
+		\nompageref{27}
+  \item [{ggf.}]\begingroup gegebenenfalls\nomeqref {\relax 9.0}
+		\nompageref{27}
   \item [{GPIO}]\begingroup General Purpose Input/Output\nomeqref {\relax 5.0}
 		\nompageref{11}
-  \item [{Hrsg.}]\begingroup Herausgeber\nomeqref {\relax 10.0}
-		\nompageref{26}
+  \item [{Hrsg.}]\begingroup Herausgeber\nomeqref {\relax 9.0}
+		\nompageref{27}
   \item [{IoT}]\begingroup Internet of Things\nomeqref {\relax 5.0}
 		\nompageref{12}
   \item [{LAN}]\begingroup Local Area Network\nomeqref {\relax 6.0}
-		\nompageref{16}
+		\nompageref{17}
   \item [{MD5}]\begingroup Message-Digest Algorithm 5\nomeqref {\relax 5.0}
 		\nompageref{12}
   \item [{MQTT}]\begingroup Message Queue Telemetry Transport Secure\nomeqref {\relax 2.0}
@@ -50,25 +51,25 @@
 		\nompageref{9}
   \item [{SSL}]\begingroup Secure Sockets Layer\nomeqref {\relax 2.0}
 		\nompageref{4}
-  \item [{Tab.}]\begingroup Tabelle\nomeqref {\relax 10.0}
-		\nompageref{26}
+  \item [{Tab.}]\begingroup Tabelle\nomeqref {\relax 9.0}
+		\nompageref{27}
   \item [{TLS}]\begingroup Transport Layer Security\nomeqref {\relax 2.0}
 		\nompageref{4}
-  \item [{u. a.}]\begingroup unter anderem\nomeqref {\relax 10.0}
-		\nompageref{26}
-  \item [{ULP}]\begingroup Ultra Low Power\nomeqref {\relax 5.0}
+  \item [{u. a.}]\begingroup unter anderem\nomeqref {\relax 9.0}
+		\nompageref{27}
+  \item [{ULP coprocessor}]\begingroup Ultra Low Power coprocessor\nomeqref {\relax 5.0}
 		\nompageref{12}
-  \item [{usw.}]\begingroup und so weiter\nomeqref {\relax 10.0}
-		\nompageref{26}
-  \item [{vgl.}]\begingroup vergleiche\nomeqref {\relax 10.0}
-		\nompageref{26}
+  \item [{usw.}]\begingroup und so weiter\nomeqref {\relax 9.0}
+		\nompageref{27}
+  \item [{vgl.}]\begingroup vergleiche\nomeqref {\relax 9.0}
+		\nompageref{27}
   \item [{Wifi}]\begingroup Wireless Fidelity\nomeqref {\relax 4.0}
 		\nompageref{8}
   \item [{WLAN}]\begingroup Wireless Local Area Network\nomeqref {\relax 2.0}
 		\nompageref{4}
-  \item [{z. B.}]\begingroup zum Beispiel\nomeqref {\relax 10.0}
-		\nompageref{26}
-  \item [{z. T.}]\begingroup zum Teil\nomeqref {\relax 10.0}
-		\nompageref{26}
+  \item [{z. B.}]\begingroup zum Beispiel\nomeqref {\relax 9.0}
+		\nompageref{27}
+  \item [{z. T.}]\begingroup zum Teil\nomeqref {\relax 9.0}
+		\nompageref{27}
 
 \end{thenomenclature}
