@@ -1,7 +1,7 @@
 # BlindControl
 Eine smarte Jalousie Steuerung
 
-## Team
+## Team Mitglieder
 - Max Bachmann
 - Marvin Eisenmann
 - Florian Vetter
