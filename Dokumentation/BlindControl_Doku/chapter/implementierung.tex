@@ -3,6 +3,33 @@
 
 \section{Interessante Code-Segmente}
 
+Abbildung~\ref{fig:controller-state-machine} zeigt die Implementierung der State Machine in Python. Hierbei beschreiben die transitions die Zustandsänderungen. Ist beispielsweise der der aktuelle Modus automatisch, so bleibt bei einer Helligkeitsänderung der Modus weiterhin automatisch. Weiterhin wird die Helligkeit aktualisiert und die neue Position der Jalousie eingestellt.
+In der for schleife \textbf{for room in blinds} wird eine entsprechende State Machine für jeden Raum erstellt.
+\begin{figure}[hbt]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/controller-state-machine}
+	\caption[Code Segment Controller State Machine]{Controller State Machine}
+	\label{fig:controller-state-machine}
+\end{figure}
+
+Abbildung~\ref{fig:task} zeigt die Erstellung des Motor Control Task. Motor\_control\_handle wird hier genutzt um den Task im Falle eines Interrupts durch die Endstopps zu stoppen.
+\begin{figure}[hbt]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/task}
+	\caption[Code Segment Task]{Task}
+	\label{fig:task}
+\end{figure}
+
+Abbildung~\ref{fig:task-calls} zeigt den Aufbau der Hauptfunktion des Sensor Modules. Es werden hier zuerst die Grenzwerte gesetzt bei deren Überschreitung der Hauptprozessor wieder gestartet werden soll. Im Folgenden werden NVS Flash, WiFi und MQTTS initialisiert und das letzte Messergebnis (ulp\_last\_result) als MQTT Nachricht übertragen. Wenn OTA Updates aktiviert sind wird auch hier der entsprechende Task gestartet. Da sowohl das OTA Update, als auch die MQTT Übertragung abgeschlossen sein müssen bevor der Hauptprozessor wieder in den deep sleep Modus wechselt, wartet der Hauptprozess mit xEventGroupWaitBits bis die entsprechenden Tasks ein Bit gesetzt haben mit dem sie signalisieren, dass sie fertig sind. Im Anschluss wird der ULP wieder gestartet und der Hauptprozessor gestoppt.
+\begin{figure}[hbt]
+	\centering
+	\includegraphics[width=0.5\linewidth]{images/taskCall}
+	\caption[Code Segment Task Calls]{Task Calls}
+	\label{fig:task-calls}
+\end{figure}
+
+
+
 \section{Gegenüberstellung Komplexität (SLOC)}
 % 1. Schätzung, 2.Schätzung, Lösung
 \subsection{1. Schätzung}
