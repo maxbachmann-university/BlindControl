@@ -37,9 +37,9 @@ Am Anfang mussten die Anforderungen an das System entworfen werden, um später g
 	%
 	1 & Das System soll modular in einen Regler, ein Sensormodul und eine Aktoransteuerung aufgeteilt sein. & F & T \\* \midrule
 	
-	2 & Das System soll die Position einer Jalousie zwischen 0\% und 100\% einstellen können. & F & T \\* \midrule
+	2 & Das System soll die Position einer Jalousie zwischen 0\% und 100\% geschlossen einstellen können. & F & T \\* \midrule
 	
-	3 & Der Sollwert für die Jalousieposition soll mit Hilfe einer Schnittstelle eine manuelle Einstellung der Jalousieposition bieten. & IF & T \\* \midrule
+	3 & Der Sollwert für die Jalousieposition soll mit Hilfe einer Schnittstelle eine Möglichkeit zur manuellen Einstellung durch den Benutzer bereitstellen. & IF & T \\* \midrule
 	
 	4 & Der Sollwert für die Jalousieposition soll entsprechend der Helligkeit einstellbar sein. & IF& T \\* \midrule
 	
@@ -47,7 +47,7 @@ Am Anfang mussten die Anforderungen an das System entworfen werden, um später g
 	
 	6 & Die aktuellen Sensorwerte sollen vom Sensormodul gemessen werden. & IF& T \\* \midrule
 	
-	7 & Das System soll aktuellen Sensorwerte ausgeben können. & IF & T \\* \midrule
+	7 & Das System soll die aktuellen Sensorwerte ausgeben können. & IF & T \\* \midrule
 	
 	8 & Das System soll die neue Jalousieposition ausgeben können. & IF & T \\* \midrule
 	
@@ -64,10 +64,10 @@ Am Anfang mussten die Anforderungen an das System entworfen werden, um später g
 \end{longtable}
 
 \section{UseCase}
-Die Abbildung~\ref{fig:UseCase} zeigt den normalen Anwendungsfall des Systems. Der Benutzer kann Einfluss auf die Jalousie Software nehmen, zum Beispiel HomeAssistent. Von dieser aus gehen Befehle über die Schnittstelle an den Regler und es werden aktuelle Informationen über den Zustand wiederum über die Schnittstelle gesendet, um sie dann auf einer Statusanzeige anzeigen zu können. Der Regler wiederum entscheidet, ob eine Handlung nötig wird und kann dementsprechend Befehle an den Aktor senden, der den Motor der Jalousie steuert. Außer dem Benutzer kann zusätzlich eine Wartungsperson direkt auf die Jalousie Steuerung zugreifen und Änderungen vornehmen.
+Die Abbildung~\ref{fig:UseCase} zeigt den normalen Anwendungsfall des Systems. Der Benutzer kann Einfluss auf die Jalousie Software nehmen, zum Beispiel über eine Smarthome Plattform oder eine Sprachsteuerung. Von dieser aus gehen Befehle über die Schnittstelle an den Regler und es werden aktuelle Informationen über den Zustand wiederum über die Schnittstelle gesendet, um sie dann auf einer Statusanzeige anzeigen zu können. Der Regler wiederum entscheidet, ob eine Handlung nötig wird und kann dementsprechend Befehle an den Aktor senden, der den Motor der Jalousie steuert. Außer dem Benutzer kann zusätzlich eine Wartungsperson direkt auf die Jalousie Steuerung zugreifen und Änderungen vornehmen.
 \begin{figure}[hbt]
 	\centering
-	\includegraphics[width=1\linewidth]{images/UseCase}
+	\includegraphics[width=0.9\linewidth]{images/UseCase}
 	\caption[UseCase Diagramm]{UseCase Diagramm für den normalen Anwendungsfall.}
 	\label{fig:UseCase}
 \end{figure}

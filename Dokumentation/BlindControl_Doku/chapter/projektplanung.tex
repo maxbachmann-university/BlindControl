@@ -3,7 +3,7 @@
 
 \section{Arbeitspakete}
 
-Es bietet sich an das Projekt in mehrere Arbeitspakete aufzuteilen. Hierzu bietet es sich an sich an den verwendeten Codemodulen zu orientieren. Dies sind in diesem Projekt das Regler Module, Das Actuator Module, das Sensor Module und Codeteile wie der Wifi-Task die für mehrere Code Module in gleicher Form benötigt werden. Innerhalb der größeren Module Actuator Module und Sensor Module bietet es sich an eine weiter Unterteilung entsprechend der Tasks vorzunehmen. Die Grafik \ref{fig:arbeitspakete} zeigt die genaue Aufteilung der Arbeitspakete.
+Es macht immer Sinn Projekte in mehrere Arbeitspakete aufzuteilen. Hierbei bietet es sich in diesem Projekt an, sich an den verwendeten Codemodulen zu orientieren. Dies sind in diesem Projekt das Regler Module, das Actuator Module, das Sensor Module und Codeteile wie der Wifi-Task\nomenclature{Wifi}{Wireless Fidelity} die für mehrere Code Module in gleicher Form benötigt werden. Innerhalb der größeren Module Actuator Module und Sensor Module bietet es sich an, eine weitere Unterteilung entsprechend der Tasks vorzunehmen. Die Abbildung~\ref{fig:arbeitspakete} zeigt die genaue Aufteilung der Arbeitspakete.
 
 \begin{figure}[hbt]
 	\centering
@@ -13,7 +13,7 @@ Es bietet sich an das Projekt in mehrere Arbeitspakete aufzuteilen. Hierzu biete
 \end{figure}
 
 \section{Zeitplan}
-Das Grafik \ref{fig:time_plan} zeigt den Zeitbedarf für die einzelnen Arbeitspakete in Form eines Gant Diagramms. Der Zeitbedarf für die einzelnen Arbeitspakete kann ebenfalls aus der Grafik \ref{fig:arbeitspakete} abgelesen werden.
+Das Abbildung~\ref{fig:time_plan} zeigt den Zeitbedarf für die einzelnen Arbeitspakete in Form eines Gant Diagramms. Der Zeitbedarf für die einzelnen Arbeitspakete kann ebenfalls aus der Abbildung~\ref{fig:arbeitspakete} abgelesen werden.
 
 \begin{figure}[hbt]
 	\centering
@@ -23,23 +23,13 @@ Das Grafik \ref{fig:time_plan} zeigt den Zeitbedarf für die einzelnen Arbeitspa
 \end{figure}
 
 
-\section{Kosten}
-
-\subsection{Schätzung in der Planungsphase}
-In der Planungsphase wurde angenommen, dass mit anderen Mikrocontrollern und damit einem höheren Aufwand gearbeitet wird. Damit ergeben sich gesamt 2200 SLOC. Die Vorlesung Mikrocontroller umfasst 64h und somit ergibt sich im Schnitt 34 lines/h, die geschrieben werden müssen. Die Kostenschätzung nach COCOMOII\_2000.4 ist in Abbildung~\ref{fig:cost_plan} zu sehen.
+\section{Kostenschätzung}
+\label{cha:Planung_cost}
+Die Aufwandsschätzung in der Planungsphase betrug 2200 SLOC\nomenclature{SLOC}{Source Lines Of Code}. Die Vorlesung Mikrocontroller umfasst 64h, woraus sich ein Schnitt von 34 lines/h ergibt. Die Kostenschätzung nach COCOMOII\_2000.4 ist in Abbildung~\ref{fig:cost_plan} zu sehen.
 
 \begin{figure}[hbt]
 	\centering
 	\includegraphics[width=1\linewidth]{images/cost_plan_img}
 	\caption[Kostenschätzung Planung]{Kostenschätzung bei der Planung.}
 	\label{fig:cost_plan}
-\end{figure}
-
-\subsection{Realität}
-In der Umsetzung wurden schließlich 1540 SLOC geschrieben. Zusätzlich zu den 64h der Vorlesung wurden noch 8h weitere benötigt. Damit ergibt sich im Schnitt 21 lines/h. Die tatsächlichen Kosten sind in Abbildung~\ref{fig:cost_end} dargestellt.
-\begin{figure}[hbt]
-	\centering
-	\includegraphics[width=1\linewidth]{images/cost_end_img}
-	\caption[Kosten Realität]{Reale Kosten am Ende des Projekts.}
-	\label{fig:cost_end}
 \end{figure}
