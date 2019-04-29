@@ -17,7 +17,7 @@ Abbildung~\ref{fig:deployment_diagramm} zeigt das Deployment Diagramm des System
 \subsection{Schritt 1: Installation von Abhängigkeiten}
 Um die ESP32 Mikrocontroller flashen zu können, muss zunächst das Espressif IoT Development Framework (ESP IDF)\nomenclature{ESP IDF}{Espressif IoT Development Framework} installiert und eingerichtet werden. An dieser Stelle sei auf die \href{https://docs.espressif.com/projects/esp-idf/en/latest/index.html}{Dokumentation von Espressif} hingewiesen, um die Programmierumgebung abhängig vom Betriebssystem richtig einzurichten. Weiterhin wird eine Installation von Git, sowie make benötigt.
 
-\subsection{Schritt 1: Installation von Abhängigkeiten}
+\subsection{Schritt 1: Installation der Module auf dem ESP32}
 Der Quellcode für beide Module kann auf Github heruntergeladen werden: \href{https://github.com/maxbachmann-university/esp32-sensor-modul}{Sensor Modul}, \href{https://github.com/maxbachmann-university/esp32-actuator-module}{Aktor Modul}.
 
 Zum Flashen des ESP32 gibt es entsprechende Makefiles, die den Vorgang vereinfachen. Einstellungen können mit \textbf{''make menuconfig''} vorgenommen werden. Die Abbildungen~\ref{fig:config_start} und ~\ref{fig:config_default} zeigen das Dialogfenster.
