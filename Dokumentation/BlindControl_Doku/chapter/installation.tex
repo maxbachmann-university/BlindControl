@@ -1,5 +1,5 @@
-\chapter{Installation}
-\label{cha:Installation}
+\chapter{Installation/Benutzung}
+\label{cha:Installation/Benutzung}
 
 \section{Deployment Diagramm}
 
@@ -53,7 +53,7 @@ sudo apt-get install -y mosquitto mosquitto-clients
 \end{lstlisting}
 
 \subsection{Schritt 3: Hinzufügen des Python Skripts}
-Für die Regelung wird ein \href{https://github.com/maxbachmann-university/blind-controller}{Python Skript} verwendet, welches auch auf Github zu finden ist. Dieses kann in einem beliebigen Ort auf dem Raspberry Pi gespeichert werden, inklusive der ''config.yml'' Datei. In dieser können die Zugangsdaten zu dem MQTT Broker angepasst werden. Für den Autostart des Skripts beim Neustart, muss mit Hilfe des Befehls wie in Listing~\ref{lst:rc.local} im Terminal der Texteditor der Datei ''rc.local'' aufgerufen werden. Anschließend wird die Datei vor der Zeie ''exit 0'' um eine weitere Zeile ergänzt, in die nach einem ''python'' der Pfad zu dem Python Skript angegeben wird, gefolgt von einem ''\&''. Das ganze sieht dann zum Beispiel so aus, wie in Listing~\ref{lst:autostart}.
+Für die Regelung wird ein \href{https://github.com/maxbachmann-university/blind-controller}{Python Skript} verwendet, welches auch auf Github zu finden ist. Dieses kann in einem beliebigen Ort auf dem Raspberry Pi gespeichert werden, inklusive der ''config.yml'' Datei. In dieser können die Zugangsdaten zu dem MQTT Broker angepasst werden. Für den Autostart des Skripts beim Neustart, muss mit Hilfe des Befehls wie in Listing~\ref{lst:rc.local} im Terminal der Texteditor der Datei ''rc.local'' aufgerufen werden. Anschließend wird die Datei vor der Zeile ''exit 0'' um eine weitere Zeile ergänzt, in die nach einem ''python'' der Pfad zu dem Python Skript angegeben wird, gefolgt von einem ''\&''. Das ganze sieht dann zum Beispiel so aus, wie in Listing~\ref{lst:autostart}.
 
 \lstset{caption={Öffnen der Autostart Datei im Editor Nano.}}
 \lstset{label={lst:rc.local}}
@@ -65,6 +65,6 @@ sudo nano /etc/rc.local
 \lstset{label={lst:autostart}}
 \lstset{language=Python}
 \begin{lstlisting}
-	python /home/pi/component.py &
-	exit 0
+python3 /home/pi/controller.py &
+exit 0
 \end{lstlisting}
