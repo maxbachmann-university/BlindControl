@@ -2,7 +2,7 @@
 \label{cha:Test}
 
 \section{Test Procedure/Report}
-Das Espressif IoT Development Framework (esp-idf) unterstützt von Haus aus unit tests mit dem Unity - unit test framework. Leider hat die Zeit nicht mehr ganz ausgereicht um entsprechende unit tests zu implementieren, da wir mit Unity keine Erfahrung haben. Dies ist jedoch für die nähere Zukunft geplant. Aus diesem Grund wurden lediglich manuell die Funktionen getestet, da dies durch die Anbindung an MQTT in Verbindung mit vielen Debugnachrichten in der Anwendung recht einfach ist. Im Folgenden werden diese Tests der einzelnen Module in tabellarischer Form beschrieben.
+Das Espressif IoT Development Framework (esp-idf) unterstützt von Haus aus unit tests mit dem Unity - unit test framework. Leider hat die Zeit nicht mehr ausgereicht, um entsprechende unit tests zu implementieren, da wir mit Unity keine Erfahrung haben. Dies ist jedoch für die nähere Zukunft geplant. Aus diesem Grund wurden lediglich manuell die Funktionen getestet, da dies durch die Anbindung an MQTT in Verbindung mit vielen Debugnachrichten in der Anwendung recht einfach ist. Im Folgenden werden diese Tests der einzelnen Module in tabellarischer Form beschrieben.
 
 
 \begin{longtable}[ht]{p{0.03\textwidth}  p{0.97\textwidth}}
@@ -13,23 +13,23 @@ Das Espressif IoT Development Framework (esp-idf) unterstützt von Haus aus unit
 	{\color[HTML]{333333} \textbf{Nr.}} & {\color[HTML]{333333} \textbf{Beschreibung}} \\* \midrule
 	\endhead
 	%
-	1 & simulieren des Helligkeitssensors durch ein Potentiometer\\* \midrule
+	1 & Simulieren des Helligkeitssensors durch ein Potentiometer\\* \midrule
 	2 & Prüfen, ob Debugnachrichten zeigen, dass der ESP32 nur bei entsprechender Helligkeitsänderung aufgeweckt wird\\* \midrule
 	3 & Prüfen, ob die entsprechende Nachricht auf das MQTT sensor topic gesendet werden \\*
 	\bottomrule
 \end{longtable}
 
 \begin{longtable}[ht]{p{0.03\textwidth}  p{0.97\textwidth}}
-	\captionabove[Regler Module]{Regler Module}\\
+	\captionabove[Test Regler Module]{Test Regler Module}\\
 	\label{tab:reglertest}\\
 	\toprule
 	\rowcolor[HTML]{FFFC9E} 
 	{\color[HTML]{333333} \textbf{Nr.}} & {\color[HTML]{333333} \textbf{Beschreibung}} \\* \midrule
 	\endhead
 	%
-	1 & manuelles Senden einer MQTT Nachricht mit einem Sensorwert\\* \midrule
+	1 & Manuelles Senden einer MQTT Nachricht mit einem Sensorwert\\* \midrule
 	2 & Prüfen, ob eine MQTT Nachricht mit der entsprechenden Positionsänderung gesendet wird\\* \midrule
-	3 & manuelles Senden einer MQTT Nachricht mit einer manuellen Positionsänderung\\* \midrule
+	3 & Manuelles Senden einer MQTT Nachricht mit einer manuellen Positionsänderung\\* \midrule
 	4 & Prüfen, ob eine MQTT Nachricht mit der entsprechenden Positionsänderung gesendet wird und erst wieder nach 60 Minuten entsprechend von Sensorwerten gesteuert wird\\*
 	\bottomrule
 \end{longtable}

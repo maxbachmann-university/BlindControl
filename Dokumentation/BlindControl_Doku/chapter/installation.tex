@@ -15,7 +15,7 @@ Abbildung~\ref{fig:deployment_diagramm} zeigt das Deployment Diagramm des System
 \section{Sensor und Aktor Modul (ESP32)}
 \label{cha:Installation_IDF}
 \subsection{Schritt 1: Installation von Abhängigkeiten}
-Um die ESP32 Mikrocontroller flashen zu können, muss zunächst das Espressif IoT Development Framework (ESP IDF)\nomenclature{ESP IDF}{Espressif IoT Development Framework} installiert und eingerichtet werden. An dieser Stelle sei auf die \href{https://docs.espressif.com/projects/esp-idf/en/latest/index.html}{Dokumentation von Espressif} hingewiesen, um die Programmierumgebung abhängig vom Betriebssystem richtig einzurichten. Weiterhin wird eine Installation von Git, sowie make benötigt.
+Um die ESP32 Mikrocontroller flashen zu können, muss zunächst das Espressif IoT Development Framework (ESP IDF)\nomenclature{ESP IDF}{Espressif IoT Development Framework} installiert und eingerichtet werden. An dieser Stelle sei auf die \href{https://docs.espressif.com/projects/esp-idf/en/latest/index.html}{Dokumentation von Espressif} hingewiesen, um die Programmierumgebung abhängig vom Betriebssystem richtig einzurichten. Weiterhin wird eine Installation von \href{https://git-scm.com/downloads}{Git}, make und \href{https://www.python.org/downloads/}{Python} benötigt.
 
 \subsection{Schritt 1: Installation der Module auf dem ESP32}
 Der Quellcode für beide Module kann auf Github heruntergeladen werden: \href{https://github.com/maxbachmann-university/esp32-sensor-modul}{Sensor Modul}, \href{https://github.com/maxbachmann-university/esp32-actuator-module}{Aktor Modul}.
@@ -64,7 +64,7 @@ make flash			# Flashen des esp32
 \section{Regler Modul (Raspberry PI)}
 
 \subsection{Schritt 1: Installation von Raspbian}
-Zunächst muss das image der aktuellsten Version von \href{https://www.raspberrypi.org/downloads/raspbian/}{Raspbian} auf die SD-Karte des Raspberry PI geladen werden.
+Zunächst muss das Image der aktuellsten Version von \href{https://www.raspberrypi.org/downloads/raspbian/}{Raspbian} auf die SD-Karte des Raspberry PI geladen werden.
 
 \subsection{Schritt 2: MQTT Broker}
 Im Grunde kann ein beliebiger MQTT Broker genutzt werden. Wir haben \href{http://mosquitto.org/}{Mosquitto} benutzt. Dieser Broker kann mit dem Befehl in Listing~\ref{lst:installmosquitto} installiert werden und läuft sofort.
