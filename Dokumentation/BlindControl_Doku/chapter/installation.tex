@@ -15,11 +15,37 @@ Abbildung~\ref{fig:deployment_diagramm} zeigt das Deployment Diagramm des System
 \section{Sensor und Aktor Modul (ESP32)}
 \label{cha:Installation_IDF}
 \subsection{Schritt 1: Installation der ESP IDF}
-Um die ESP32 Mikrocontroller flashen zu können, muss zunächst die Espressif IoT Development Framework (ESP IDF)\nomenclature{ESP IDF}{Espressif IoT Development Framework} installiert und eingerichtet werden. An dieser Stelle sei auf die \href{https://docs.espressif.com/projects/esp-idf/en/latest/index.html}{Dokumentation von Espressif} hingewiesen, um die Programmierumgebung abhängig vom Betriebssystem richtig einzurichten.
+Um die ESP32 Mikrocontroller flashen zu können, muss zunächst das Espressif IoT Development Framework (ESP IDF)\nomenclature{ESP IDF}{Espressif IoT Development Framework} installiert und eingerichtet werden. An dieser Stelle sei auf die \href{https://docs.espressif.com/projects/esp-idf/en/latest/index.html}{Dokumentation von Espressif} hingewiesen, um die Programmierumgebung abhängig vom Betriebssystem richtig einzurichten. Weiterhin wird eine Installation von Git, sowie make benötigt.
 
 \subsection{Schritt 2: Anpassung der Konfiguration}
 Der Quellcode für beide Module kann auf Github heruntergeladen werden: \href{https://github.com/maxbachmann-university/esp32-sensor-modul}{Sensor Modul}, \href{https://github.com/maxbachmann-university/esp32-actuator-module}{Aktor Modul}.
-Anschließend wechselt man mit der Konsole in das jeweilige Verzeichnis. Mit dem Befehl \textbf{''make menuconfig''} wird die Konfiguration vorgenommen. Es öffnet sich ein Dialog, wie in Abbildung~\ref{fig:config_start} dargestellt. Unter dem ersten Menüpunkt kann der Port festgelegt werden, an welchen der ESP32 am Computer angeschlossen wurde. Unter ''Example Configuration'' können wie in Abbildung~\ref{fig:config_default} gezeigt die Verbindungsdaten des WLAN, des MQTT Brokers und des OTA Servers angepasst werden. Diese Konfiguration wird anschließend gespeichert.
+
+Zum Flashen des ESP32 gibt es entsprechende Makefiles, die den Vorgang vereinfachen. Einstellungen können mit \textbf{''make menuconfig''} vorgenommen werden. Die Abbildungen~\ref{fig:config_start} und ~\ref{fig:config_default} zeigen das Dialogfenster.
+Interessante Einstellungsmöglichkeiten sind hier die Elemente:
+\begin{itemize}
+	\item \textbf{Security Features} um secure boot, sowie flash encryption zu aktivieren bzw. zu deaktivieren (Diese Einstellung sollte bei Unsicherheit besser deaktiviert bleiben, da sie in der Regel nicht umkehrbar ist)
+	\item \textbf{Serial Flasher Config} Hier kann der serielle Port an dem der ESP32 hängt ausgewählt werden
+	\item \textbf{Example Configuration} Hier können Projektspezifische Parameter wie die Verbindungsdaten des WLAN Routers, des MQTT Brokers und des OTA Servers angepasst werden
+\end{itemize}
+
+Im Folgenden sind die benötigten Befehle zum Flashen des ESP32 sowohl für das Sensor Modul, als auch für das Aktor Modul gelistet.
+\lstset{caption={Installation des Sensor Moduls}}
+\lstset{label={lst:rc.local}}
+\begin{lstlisting}
+git clone --depth=1 https://github.com/maxbachmann-university/esp32-sensor-modul
+cd esp32-sensor-modul
+make menuconfig		# Konfiguration vornehmen
+make flash			# Flashen des esp32
+\end{lstlisting}
+
+\lstset{caption={Installation des Aktor Moduls}}
+\lstset{label={lst:rc.local}}
+\begin{lstlisting}
+git clone --depth=1 https://github.com/maxbachmann-university/esp32-actuator-module
+cd esp32-actuator-module
+make menuconfig		# Konfiguration vornehmen
+make flash			# Flashen des esp32
+\end{lstlisting}
 
 \begin{figure}[hbt]
 	\centering
@@ -35,16 +61,13 @@ Anschließend wechselt man mit der Konsole in das jeweilige Verzeichnis. Mit dem
 	\label{fig:config_default}
 \end{figure}
 
-\subsection{Schritt 3: Flashen}
-Im letzten Schritt wird mit dem Befehl \textbf{''make flash''} der Mikrocontroller geflashed.
-
 \section{Regler Modul (Raspberry PI)}
 
 \subsection{Schritt 1: Installation von Raspbian}
 Zunächst muss das image der aktuellsten Version von \href{https://www.raspberrypi.org/downloads/raspbian/}{Raspbian} auf die SD-Karte des Raspberry PI geladen werden.
 
 \subsection{Schritt 2: MQTT Broker}
-Für den MQTT Broker kann im Grunde jeder Beliebiger verwendet werden. Wir haben hierfür \href{http://mosquitto.org/}{Mosquitto} benutzt. Dieser Broker kann mit dem Befehl in Listing~\ref{lst:installmosquitto} installiert werden und läuft sofort.
+Im Grunde kann ein beliebiger MQTT Broker genutzt werden. Wir haben \href{http://mosquitto.org/}{Mosquitto} benutzt. Dieser Broker kann mit dem Befehl in Listing~\ref{lst:installmosquitto} installiert werden und läuft sofort.
 
 \lstset{caption={Installation von Mosquitto.}}
 \lstset{label={lst:installmosquitto}}
