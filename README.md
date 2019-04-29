@@ -2,9 +2,9 @@
 Eine smarte Jalousie Steuerung
 
 ## Team
-Max Bachmann
-Marvin Eisenmann
-Florian Vetter
+- Max Bachmann
+- Marvin Eisenmann
+- Florian Vetter
 
 ## Allgemeine Informationen
 Die Code Segmente in den Repositories wurden selbst geschrieben.
