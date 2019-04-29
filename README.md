@@ -1,9 +1,11 @@
 # BlindControl
+Eine smarte Jalousie Steuerung
 
-Jalousiensteuerung
+## Team Mitglieder
+- Max Bachmann
+- Marvin Eisenmann
+- Florian Vetter
 
-## Team
-Max Bachmann
-Marvin Eisenmann
-Florian Vetter
-(Felix Bandle)
+## Allgemeine Informationen
+Die Code Segmente in den Repositories wurden selbst geschrieben.
+Lediglich der ADC Assembler Code im esp32-Sensor-Modul wurde von Espressif übernommen.
