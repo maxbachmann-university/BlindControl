@@ -42,4 +42,6 @@
 *.nlo
 *.synctex.gz
 *.toc
+*.nlg
+*.nls
 BlindControl_Doku.pdf
